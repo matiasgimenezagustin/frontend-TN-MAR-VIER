@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { URL_API } from '../../../config'
 
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
     const [products, setProducts] = useState([])
     const navigate = useNavigate()
     useEffect( () =>{
-        fetch('http://localhost:8080/api/products', {
+        fetch( URL_API + '/api/products', {
             headers: {
                 'Authorization': localStorage.getItem('auth-token-app')
             }

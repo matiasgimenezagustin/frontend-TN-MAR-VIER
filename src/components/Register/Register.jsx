@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { verifyToken } from '../../Helpers/verifyToken'
+import { URL_API } from '../../../config'
 
 const Register = () => {
   
@@ -20,7 +21,7 @@ const Register = () => {
     e.preventDefault()
     console.log('hola')
    /*  const response = await axios.post('http://localhost:8080/register', {username: formValues.username, password: formValues.password}) */
-    const response = await fetch('http://localhost:8080/register', {
+    const response = await fetch( URL_API + '/register', {
       method: 'POST', 
       headers:{
         'Content-Type': 'application/json'

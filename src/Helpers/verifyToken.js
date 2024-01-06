@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { URL_API } from "../../config"
 
 export const verifyToken = () => {
 
     const navigate = useNavigate()
-    fetch('http://localhost:8080/auth/verify', {
+    fetch(URL_API + '/auth/verify', {
       method: 'POST',
       headers: {
         'Authorization': localStorage.getItem('auth-token-app')
